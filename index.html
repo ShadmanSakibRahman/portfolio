@@ -99,7 +99,7 @@ section{position:relative;z-index:1;padding:6rem 2rem}
 
 /* Projects */
 .projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem}
-.project-card{position:relative;background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:2rem;transition:all .4s ease;overflow:hidden}
+.project-card{position:relative;background:var(--bg2);border:1px solid rgba(255,255,255,.05);border-radius:16px;padding:2rem;transition:all .4s ease;overflow:hidden;cursor:pointer}
 .project-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
 .project-card:hover{transform:translateY(-5px);border-color:rgba(0,245,212,.2);box-shadow:0 20px 60px rgba(0,0,0,.5)}
 .project-card:hover::before{transform:scaleX(1)}
@@ -382,7 +382,7 @@ footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-
     </div>
 
     <div class="projects-grid">
-      <div class="project-card reveal">
+      <div class="project-card reveal" data-href="https://github.com/ShadmanSakibRahman/Enhancing-USB-Security-A-MultiLayered-Framework-for-Detecting-Mitigating-BadUSB-Attacks">
         <div class="project-icon">&#x1f6e1;</div>
         <h3><a href="https://github.com/ShadmanSakibRahman/Enhancing-USB-Security-A-MultiLayered-Framework-for-Detecting-Mitigating-BadUSB-Attacks" target="_blank">USB Security Detection Framework</a></h3>
         <div class="project-tech-tags">
@@ -398,7 +398,7 @@ footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-
         </div>
       </div>
 
-      <div class="project-card reveal reveal-delay-1">
+      <div class="project-card reveal reveal-delay-1" data-href="https://github.com/ShadmanSakibRahman/DeskSense">
         <div class="project-icon">&#x1f441;</div>
         <h3><a href="https://github.com/ShadmanSakibRahman/DeskSense" target="_blank">DeskSense</a></h3>
         <div class="project-tech-tags">
@@ -413,7 +413,7 @@ footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-
         </div>
       </div>
 
-      <div class="project-card reveal reveal-delay-2">
+      <div class="project-card reveal reveal-delay-2" data-href="https://shadmansakibrahman.github.io/StreakFlow">
         <div class="project-icon">&#x1f525;</div>
         <h3><a href="https://shadmansakibrahman.github.io/StreakFlow" target="_blank">StreakFlow</a></h3>
         <div class="project-tech-tags">
@@ -423,12 +423,12 @@ footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-
         </div>
         <p>Full-stack habit tracking web application with streak tracking, analytics dashboards, and cross-device sync. Responsive UI with data-driven insights for user behavior patterns.</p>
         <div class="project-stats">
-          <span class="project-stat">Live Demo</span>
+          <a href="https://shadmansakibrahman.github.io/StreakFlow" target="_blank" class="project-stat" style="text-decoration:none;color:var(--cyan)">Live Demo &#x2197;</a>
           <span class="project-stat">Full-stack</span>
         </div>
       </div>
 
-      <div class="project-card reveal reveal-delay-1">
+      <div class="project-card reveal reveal-delay-1" data-href="https://github.com/ShadmanSakibRahman/PowerBI-Sales-Analytics-Dashboard-V2.0">
         <div class="project-icon">&#x1f4ca;</div>
         <h3><a href="https://github.com/ShadmanSakibRahman/PowerBI-Sales-Analytics-Dashboard-V2.0" target="_blank">Power BI Sales Dashboard</a></h3>
         <div class="project-tech-tags">
@@ -443,7 +443,7 @@ footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-
         </div>
       </div>
 
-      <div class="project-card reveal reveal-delay-2">
+      <div class="project-card reveal reveal-delay-2" data-href="https://github.com/ShadmanSakibRahman">
         <div class="project-icon">&#x1f916;</div>
         <h3><a href="https://github.com/ShadmanSakibRahman" target="_blank">AI Automation & Agent Systems</a></h3>
         <div class="project-tech-tags">
@@ -454,7 +454,7 @@ footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-
         <p>AI automation pipelines with LLM-assisted decision flows. Intelligent agent workflows for streamlining business processes and data operations.</p>
       </div>
 
-      <div class="project-card reveal reveal-delay-3">
+      <div class="project-card reveal reveal-delay-3" data-href="https://github.com/ShadmanSakibRahman/Custom-Unix-Shell">
         <div class="project-icon">&#x1f4bb;</div>
         <h3><a href="https://github.com/ShadmanSakibRahman/Custom-Unix-Shell" target="_blank">Custom Unix Shell</a></h3>
         <div class="project-tech-tags">
@@ -870,6 +870,16 @@ footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-
 (function(){
   const nav=document.getElementById('navbar');
   window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)});
+})();
+
+// ============ CLICKABLE PROJECT CARDS ============
+(function(){
+  document.querySelectorAll('.project-card[data-href]').forEach(card=>{
+    card.addEventListener('click',(e)=>{
+      if(e.target.closest('a'))return;
+      window.open(card.dataset.href,'_blank');
+    });
+  });
 })();
 
 // ============ COUNTER ANIMATION ============
