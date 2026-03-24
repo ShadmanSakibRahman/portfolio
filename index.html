@@ -170,45 +170,107 @@ footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-
 .nav-toggle{display:none;flex-direction:column;gap:5px;cursor:pointer;z-index:101}
 .nav-toggle span{width:25px;height:2px;background:var(--text);transition:all .3s}
 
-/* Responsive — large screens */
-@media(min-width:1600px){
+/* Responsive — ultra-wide / big screens (1920px+) */
+@media(min-width:1920px){
+  .container{max-width:1100px}
+  .hero h1{font-size:4.5rem}
+  .section-title{font-size:3rem}
+  .hero-summary{font-size:1.05rem}
+  section{padding:8rem 3rem}
+}
+/* Responsive — large screens (1600px+) */
+@media(min-width:1600px) and (max-width:1919px){
   .container{max-width:1000px}
+  section{padding:7rem 2.5rem}
 }
-/* Responsive — tablet */
-@media(max-width:1024px){
-  section{padding:4rem 1.5rem}
+/* Responsive — standard desktop (1200–1599px) */
+@media(min-width:1200px) and (max-width:1599px){
+  .container{max-width:960px}
+}
+/* Responsive — small desktop / large tablet landscape (1024–1199px) */
+@media(max-width:1199px){
+  .container{max-width:900px}
+  section{padding:5rem 2rem}
   .projects-grid{grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-  .skills-container{grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+  .skills-container{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
 }
-/* Responsive — mobile */
-@media(max-width:768px){
+/* Responsive — tablet portrait (768–1023px) */
+@media(max-width:1023px){
+  nav{padding:.8rem 1.5rem}
+  section{padding:4rem 1.5rem}
+  .hero h1{font-size:clamp(2rem,5vw,3rem)}
+  .hero-summary{font-size:.9rem;max-width:480px}
+  .projects-grid{grid-template-columns:repeat(2,1fr)}
+  .skills-container{grid-template-columns:repeat(2,1fr)}
+  .cert-grid{grid-template-columns:repeat(2,1fr)}
+  .timeline-company{font-size:1.1rem}
+  .hero-stats{gap:2rem}
+  .stat-label-big{font-size:.9rem}
+  .stat-label{font-size:.65rem}
+}
+/* Responsive — mobile landscape / small tablet (600–767px) */
+@media(max-width:767px){
   nav{padding:.8rem 1rem}
+  nav .nav-cta{padding:.4rem 1rem;font-size:.7rem}
   section{padding:3.5rem 1rem}
-  .nav-links{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:2rem}
+  .nav-links{display:none;position:fixed;top:0;left:0;width:100%;height:100vh;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:2rem;z-index:100}
   .nav-links.open{display:flex}
   .nav-toggle{display:flex}
+  .hero{min-height:auto;padding-top:6rem;padding-bottom:3rem}
   .hero h1{font-size:clamp(1.8rem,7vw,2.5rem);letter-spacing:-1px}
-  .hero-summary{font-size:.85rem}
-  .hero-stats{flex-wrap:wrap;gap:1.5rem}
-  .hero-actions{flex-direction:column;gap:.8rem}
+  .hero-summary{font-size:.85rem;max-width:400px}
+  .hero-tag{font-size:.65rem;padding:.3rem .8rem}
+  .hero-stats{flex-direction:column;gap:1rem;align-items:center}
+  .hero-actions{flex-direction:column;gap:.8rem;align-items:center;width:100%}
+  .btn-primary,.btn-secondary{width:100%;max-width:280px;justify-content:center}
   .projects-grid{grid-template-columns:1fr}
   .skills-container{grid-template-columns:1fr}
   .cert-grid{grid-template-columns:1fr}
   .timeline{padding-left:1.5rem}
   .timeline-item{padding-left:1rem}
   .timeline-item::before{left:-2.05rem}
+  .timeline-header{flex-direction:column;gap:.2rem}
+  .timeline-company{font-size:1rem}
   .section-header{margin-bottom:2rem}
+  .section-title{font-size:1.8rem;letter-spacing:-.5px}
   .contact-links{flex-direction:column;align-items:center}
+  .contact-link{width:100%;max-width:280px;justify-content:center}
   .achievements-row{flex-direction:column;align-items:center}
   .edu-card{flex-direction:column;text-align:center}
+  .edu-gpa{font-size:1.2rem}
+  .project-card{padding:1.5rem}
+  .hero-scroll{display:none}
   body{cursor:auto}
   .cursor,.cursor-dot{display:none}
 }
+/* Responsive — small mobile (480px and below) */
 @media(max-width:480px){
-  .hero h1{font-size:1.6rem;letter-spacing:-.5px}
-  .hero-tag{font-size:.65rem;letter-spacing:1px}
-  .stat-number{font-size:1.3rem}
-  .nav-logo{font-size:1.1rem}
+  section{padding:3rem .8rem}
+  .hero h1{font-size:1.5rem;letter-spacing:-.5px}
+  .hero-summary{font-size:.8rem}
+  .hero-tag{font-size:.6rem;letter-spacing:1px}
+  .stat-label-big{font-size:.85rem}
+  .stat-label{font-size:.6rem}
+  .section-title{font-size:1.5rem}
+  .section-label{font-size:.65rem;letter-spacing:2px}
+  .timeline-body{font-size:.85rem}
+  .project-card h3{font-size:1rem}
+  .project-card p{font-size:.8rem}
+  .skill-tag{font-size:.75rem;padding:.3rem .6rem}
+  .cert-card{padding:1.2rem}
+  .cert-card h4{font-size:.85rem}
+  .cert-card p{font-size:.75rem}
+  .achievement-badge{padding:.6rem 1rem}
+  .achievement-badge .badge-text{font-size:.8rem}
+  nav{padding:.6rem .8rem}
+  .nav-links a{font-size:.7rem}
+}
+/* Responsive — very small mobile (360px and below) */
+@media(max-width:360px){
+  .hero h1{font-size:1.3rem}
+  .hero-summary{font-size:.75rem}
+  .btn-primary,.btn-secondary{font-size:.8rem;padding:.6rem 1.2rem}
+  .project-icon{width:36px;height:36px;font-size:1rem}
 }
 </style>
 </head>
