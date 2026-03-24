@@ -69,7 +69,8 @@ section{position:relative;z-index:1;padding:6rem 2rem}
 .hero-stats{display:flex;gap:2.5rem;margin-top:2.5rem;padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.06);justify-content:center}
 .stat{text-align:center}
 .stat-number{font-family:'Syne',sans-serif;font-size:1.6rem;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.stat-label{font-size:.75rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-top:.2rem}
+.stat-label-big{font-family:'Syne',sans-serif;font-size:1rem;font-weight:700;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:.7rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;margin-top:.2rem}
 .hero-scroll{position:absolute;bottom:3rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.5rem;color:var(--text-muted);font-size:.7rem;letter-spacing:2px;text-transform:uppercase;animation:float 3s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateX(-50%) translateY(0)}50%{transform:translateX(-50%) translateY(-10px)}}
 .scroll-line{width:1px;height:40px;background:linear-gradient(to bottom,var(--cyan),transparent)}
@@ -260,16 +261,16 @@ footer{position:relative;z-index:1;text-align:center;padding:1.5rem 2rem;border-
     </div>
     <div class="hero-stats">
       <div class="stat">
-        <div class="stat-number" data-count="5">0</div>
-        <div class="stat-label">Gov. Data Sources Integrated</div>
+        <div class="stat-label-big">ETL Pipelines</div>
+        <div class="stat-label">Government Data Infrastructure</div>
       </div>
       <div class="stat">
-        <div class="stat-number" data-count="3">0</div>
-        <div class="stat-label">Power BI Dashboards</div>
+        <div class="stat-label-big">ISO 27001</div>
+        <div class="stat-label">Security Compliance</div>
       </div>
       <div class="stat">
-        <div class="stat-number" data-count="5">0</div>
-        <div class="stat-label">Web App Versions Shipped</div>
+        <div class="stat-label-big">Full-Stack</div>
+        <div class="stat-label">Data to Dashboard</div>
       </div>
     </div>
   </div>
